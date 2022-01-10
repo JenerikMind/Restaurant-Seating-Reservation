@@ -45,7 +45,7 @@ function validateParams(req, res, next) {
   ) {
     return next({
       status: 400,
-      message: "The quantity of people must comprise of at least 1 person",
+      message: "The quantity can't be less than 1 person.",
     });
   }
 
@@ -54,7 +54,7 @@ function validateParams(req, res, next) {
   if (!dateTest || dateTest == "Invalid Date")
     return next({
       status: 400,
-      message: "Please return a valid reservation_date",
+      message: "Please return a valid reservation_date.",
     });
 
   const reservationsStart = new Date(data.reservation_date + " " + "10:30");
@@ -70,16 +70,16 @@ function validateParams(req, res, next) {
     return next({
       status: 400,
       message:
-        "the date or time you chose was invalid; please enter a valid reservation_time and reservation_date",
+        "the date or time you chose was invalid. Please enter a valid reservation_time and reservation_date.",
     });
   }
   
   // checks to see if the restaurant is open on a Tuesday
-  if (prospectiveDate.getDay() === 1) {
+  if (prospectiveDate.getDay() === 2) {
     return next({
       status: 400,
       message:
-        "The restaurant is closed on Tuesdays; please choose a different date",
+        "The restaurant is closed on Tuesdays. Please pick another date.",
     });
   }
 
@@ -99,7 +99,7 @@ function validateParams(req, res, next) {
   ) {
     return next({
       status: 400,
-      message: "Please schedule your reservation for a date/time in the future",
+      message: "Please schedule your reservation for a date/time in the future. Or travel further back in time to make a date in the past's future.",
     });
   }
 
