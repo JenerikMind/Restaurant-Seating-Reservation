@@ -19,7 +19,7 @@ export default function ReservationForm() {
   const [mobile_number, set_mobile_number] = useState("");
   const [people, set_people] = useState(null);
 
-  // particular to edit page
+
   const { reservation_id = null } = useParams();
   const [existingReservation, setExistingReservation] = useState({});
 
