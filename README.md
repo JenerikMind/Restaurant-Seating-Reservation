@@ -1,2 +1,3 @@
-# thinkful-rezzy
- A basic reservation system for seating guests
+# Thinkful Reservations
+ A simple implementation of basic seating reservations.  
+ 
