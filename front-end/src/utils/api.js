@@ -9,6 +9,8 @@ import axios from 'axios';
 const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "https://api-restaurant-reservations.herokuapp.com";
 
+  // "https://api-restaurant-reservations.herokuapp.com"
+
 /**
  * Defines the default headers for these functions to work with `json-server`
  */
@@ -68,19 +70,12 @@ export async function listReservations(params, signal) {
   return await fetchJson(url, { headers, signal }, [])
      .then(formatReservationDate)
      .then(formatReservationTime);
-    // .then((data)=>{
-    //   const reformattedTime = readableDateAndTime(data);
-    //   return reformattedTime;
-
-    // })
-//   .then((reservations)=>reservations);
 }
 
 export async function getReservationById(reservation_id, signal) {
   const url = new URL(`${API_BASE_URL}/reservations/${reservation_id}`);
 
   return await fetchJson(url, { headers, signal }, []);
-//   .then((reservations)=>reservations);
 }
 
 export async function createReservation(params, signal){
