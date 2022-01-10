@@ -82,7 +82,7 @@ export default function ReservationsTable({reservations, isSearchTable, findClic
 
     const ReservationsTable = () => {
         return (
-        <table className="table">
+        <table className="table table-striped table-sm">
             <thead>
             <tr>
                 {criteriaDisplay.map((info, index)=>{
